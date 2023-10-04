@@ -8,16 +8,16 @@
 import UIKit
 
 class PhotoCell: UICollectionViewCell {
-    func update(label text: String, image: UIImage) {
-        bookName.text = text
-        imageView.image = image
-    }
     
-    
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var bookName: UILabel!
+    
+    
+    func setup(with book: Book) {
+//        imageView.image = book.image
+        bookName.text = book.name
+    }
     
 }
 
 
-print("Hello")

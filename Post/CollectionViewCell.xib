@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CollectionViewCell" customModule="Post" customModuleProvider="target">
+            <connections>
+                <outlet property="coverImageOutlet" destination="xbJ-u1-cWr" id="Rvl-GS-5HW"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="gTV-IL-0wX" customClass="CollectionViewCell" customModule="Post" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="198" height="260"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="198" height="260"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xbJ-u1-cWr">
+                        <rect key="frame" x="17" y="17" width="164" height="226"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="226" id="iat-sW-rzu"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="xbJ-u1-cWr" secondAttribute="trailing" constant="17" id="4FX-Cp-3m4"/>
+                <constraint firstAttribute="bottom" secondItem="xbJ-u1-cWr" secondAttribute="bottom" constant="17" id="6Ko-Iu-FEX"/>
+                <constraint firstItem="xbJ-u1-cWr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="17" id="cFa-Qs-HHg"/>
+                <constraint firstItem="xbJ-u1-cWr" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="17" id="lo8-CC-d62"/>
+            </constraints>
+            <size key="customSize" width="197" height="260"/>
+            <point key="canvasLocation" x="251.14503816793894" y="93.661971830985919"/>
+        </collectionViewCell>
+    </objects>
+</document>
