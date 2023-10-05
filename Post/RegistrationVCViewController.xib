@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="emailTextFieldOutlet" destination="nca-DI-yHD" id="Qli-li-laK"/>
                 <outlet property="passwordTextFieldOutlet" destination="kB4-21-sBn" id="RbG-oC-EkE"/>
+                <outlet property="view" destination="12h-6B-efy" id="zwj-HH-KIS"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -51,7 +52,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7J-N6-lFk">
-                        <rect key="frame" x="132" y="326" width="129" height="35"/>
+                        <rect key="frame" x="132" y="326" width="129" height="34.333333333333314"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="36" id="ljp-xB-ldq"/>
                         </constraints>

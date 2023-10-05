@@ -5,87 +5,57 @@
 //  Created by Наида Магомаева on 26.09.2023.
 //
 
-//import Foundation
-//
-//final class APICaller {
-//    static let shared = APICaller()
-//
-//
-//    private struct Constans {
-//        static let apiKey = ""
-//
-//    }
-//
-//    private init() {
-//
-//    }
-//
-//    func getAllBooksData(
-//        complition: @escaping (Result<[Book], Error>) -> Void)
-//    ) {
-//
-//    }
-//
+import Foundation
+import Alamofire
+
+
+
+struct BooksResponse: Decodable {
+    let results: [Book]
+}
+
+struct Book: Decodable {
+    var id: Int
+    var title: String
+    var authors: String
+    var desc: String
+    var imurl: String
+    var url: String
+}
+
+
+func fetchBooksFromAPI() -> [Book] {
+    let api = "https://www.googleapis.com/books/v1/volumes?q=fantazy"
     
+    guard let apiURL = URL(string: api) else { fatalError("что-то пошло не так :(")}
     
+    let session = URLSession(configuration: .default)
+    let task = session.dataTask(with: apiURL) { (data, response, error) in
+        guard let data = data, error == nil else {return}
+        
+        let json = try!(data:json.data!)
+        
+        let items = json["items"].array!
+        
+        for i in items{
+            
+            let id = i["id"].stringValue
+            
+            let title = i["volumeInfo"]["title"].stringValue
+            
+            let authors = i["volumeInfo"]["authors"].array!
+            
+            var author = ""
+            
+            }
+            
+            
+            DispatchQueue.main.async {
+                
+            data.append(Book(id: id, title: title, authors: author, desc: description, imurl: imurl, url: url1))
+            }
+        }
+        
+    } .task.resume()
     
-    // func getAllBooks(completion: @escaping (Result<[Book], Error>) -> Void)
-    //{ guard Reachability.isConnectedToNetwork(),
-    //        let url = URL(string: "https://api.litnet.com/library/get") else {
-    //    completion(.failure(CustomNSError.notConnectedToInternet))
-    //    return
-    //}
-    //
-    //var request = URLRequest(url: url)
-    //    request.httpMethod = "GET"
-    //
-    //    URLSession.shared.dataTask(with: request) {data, _, error in
-    //        if let error = error {
-    //            print (#function, ("Request: \(request\nError: \(error)"))
-    //completion(.failure(error))
-    //return
-    //}
-    //
-    //guard let data = data else {
-    //completion(.failure(CocoaError.noData))
-    //return
-    //}
-    //do {
-    //        let books = try JSONDecoder().decode(Decodable.Protocol, BooksResponse.self, from: data)
-    //completion(.success(books.data))
-    //} catch let error {
-    //print(#function, "Request: \(request) ")
-    //}
-    //        }
-    //
-    //    }
-    
-    
-    //            func fetchData() {
-    //                let url = URL(string: "https://example.com/api")!
-    //                URLSession.shared.dataTask(with: url) { data, response, error in
-    //                    if let error = error {
-    //                        print("Error: \(error.localizedDescription)")
-    //                        return
-    //                    }
-    //                    guard let httpResponse = response as? HTTPURLResponse,
-    //                          (200...299).contains(httpResponse.statusCode) else {
-    //                        print("Invalid response")
-    //                        return
-    //                    }
-    //                    guard let data = data else {
-    //                        print("No data received")
-    //                        return
-    //                    }
-    //                    do {
-    //                        let decoder = JSONDecoder()
-    //                        let result = try decoder.decode(Result.self, from: data)
-    //                        // Use the result to populate your app's views
-    //                    } catch {
-    //                        print("Error decoding JSON: \(error.localizedDescription)")
-    //                    }
-    //                }.resume()
-    //            }
-    //
-    //
 

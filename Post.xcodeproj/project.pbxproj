@@ -11,8 +11,9 @@
 		5813CA282ABB53E600C0E6C1 /* RegistrationVCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5813CA262ABB53E600C0E6C1 /* RegistrationVCViewController.xib */; };
 		587F89362AA280C70097C17B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587F89342AA280C70097C17B /* MainViewController.swift */; };
 		587F89372AA280C70097C17B /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 587F89352AA280C70097C17B /* MainViewController.xib */; };
-		588560AE2ACF07E700D17568 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588560AD2ACF07E700D17568 /* AuthService.swift */; };
-		588560B02ACF08B800D17568 /* RegiserUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588560AF2ACF08B800D17568 /* RegiserUserRequest.swift */; };
+		588560B22ACF601100D17568 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588560B12ACF601100D17568 /* UserData.swift */; };
+		588560B52ACF663F00D17568 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 588560B42ACF663F00D17568 /* Alamofire */; };
+		588560B72ACF716F00D17568 /* GetJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588560B62ACF716F00D17568 /* GetJSON.swift */; };
 		5891FE1E2AB0CCED00E77215 /* libraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5891FE1D2AB0CCED00E77215 /* libraryViewModel.swift */; };
 		5891FE1F2AB0E47200E77215 /* ChoiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A719B42AACFE1000A7C29E /* ChoiseViewController.swift */; };
 		589CCA592A702F5A00EDB1D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589CCA582A702F5A00EDB1D5 /* AppDelegate.swift */; };
@@ -37,8 +38,8 @@
 		5813CA262ABB53E600C0E6C1 /* RegistrationVCViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationVCViewController.xib; sourceTree = "<group>"; };
 		587F89342AA280C70097C17B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		587F89352AA280C70097C17B /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		588560AD2ACF07E700D17568 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		588560AF2ACF08B800D17568 /* RegiserUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiserUserRequest.swift; sourceTree = "<group>"; };
+		588560B12ACF601100D17568 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		588560B62ACF716F00D17568 /* GetJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetJSON.swift; sourceTree = "<group>"; };
 		5891FE1D2AB0CCED00E77215 /* libraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = libraryViewModel.swift; sourceTree = "<group>"; };
 		589CCA552A702F5A00EDB1D5 /* Post.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Post.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		589CCA582A702F5A00EDB1D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +68,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58A6F9EE2ACAFE620082BA36 /* FirebaseAuth in Frameworks */,
+				588560B52ACF663F00D17568 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,8 +82,7 @@
 				58A6F9EF2ACB017B0082BA36 /* LoginViewController.swift */,
 				5813CA262ABB53E600C0E6C1 /* RegistrationVCViewController.xib */,
 				58A6F9F02ACB017B0082BA36 /* LoginViewController.xib */,
-				588560AD2ACF07E700D17568 /* AuthService.swift */,
-				588560AF2ACF08B800D17568 /* RegiserUserRequest.swift */,
+				588560B12ACF601100D17568 /* UserData.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -119,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				58B8AF5E2AC35DF300E6F2BF /* API File.swift */,
+				588560B62ACF716F00D17568 /* GetJSON.swift */,
 				589CCA632A702F5C00EDB1D5 /* LaunchScreen.storyboard */,
 				589CCA612A702F5C00EDB1D5 /* Assets.xcassets */,
 				589CCA662A702F5C00EDB1D5 /* Info.plist */,
@@ -188,6 +190,7 @@
 			name = Post;
 			packageProductDependencies = (
 				58A6F9ED2ACAFE620082BA36 /* FirebaseAuth */,
+				588560B42ACF663F00D17568 /* Alamofire */,
 			);
 			productName = Post;
 			productReference = 589CCA552A702F5A00EDB1D5 /* Post.app */;
@@ -219,6 +222,7 @@
 			mainGroup = 589CCA4C2A702F5900EDB1D5;
 			packageReferences = (
 				58A6F9EC2ACAFE620082BA36 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				588560B32ACF663E00D17568 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 589CCA562A702F5A00EDB1D5 /* Products */;
 			projectDirPath = "";
@@ -252,17 +256,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				588560B22ACF601100D17568 /* UserData.swift in Sources */,
 				58A6F9F12ACB017B0082BA36 /* LoginViewController.swift in Sources */,
 				58AA0C4E2ABCA38400BE1219 /* CollectionViewCell.swift in Sources */,
 				58DD56522ACDCE5600367ED1 /* Book.swift in Sources */,
 				5813CA272ABB53E600C0E6C1 /* RegistrationVCViewController.swift in Sources */,
 				589CCA592A702F5A00EDB1D5 /* AppDelegate.swift in Sources */,
 				58A719B12AACFDF200A7C29E /* PhotoCell.swift in Sources */,
-				588560AE2ACF07E700D17568 /* AuthService.swift in Sources */,
 				58B8AF5F2AC35DF300E6F2BF /* API File.swift in Sources */,
-				588560B02ACF08B800D17568 /* RegiserUserRequest.swift in Sources */,
 				5891FE1E2AB0CCED00E77215 /* libraryViewModel.swift in Sources */,
 				587F89362AA280C70097C17B /* MainViewController.swift in Sources */,
+				588560B72ACF716F00D17568 /* GetJSON.swift in Sources */,
 				589CCA5B2A702F5A00EDB1D5 /* SceneDelegate.swift in Sources */,
 				58A719AF2AACFDD200A7C29E /*  LibraryViewController.swift in Sources */,
 				5891FE1F2AB0E47200E77215 /* ChoiseViewController.swift in Sources */,
@@ -484,6 +488,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		588560B32ACF663E00D17568 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		58A6F9EC2ACAFE620082BA36 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -495,6 +507,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		588560B42ACF663F00D17568 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 588560B32ACF663E00D17568 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		58A6F9ED2ACAFE620082BA36 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 58A6F9EC2ACAFE620082BA36 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
